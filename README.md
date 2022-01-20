@@ -8,7 +8,35 @@ In this practice, you will
 ## Generate a React app
 
 Open a terminal and change the directory until you are in the directory where
-you want to create your React app. Then, run the following command:
+you want to create your React app.
+
+To begin, install a global version of `create-react-app`:
+
+```bash
+npm i -g create-react-app
+```
+
+You only need to install `create-react-app` on your computer once, i.e., not
+before every project.
+
+> **Note**: Although the official `create-react-app` [documentation][cra] no
+> longer recommends installing a global version of `create-react-app`, App
+> Academy still recommends that you install it globally. This is because App
+> Academy also encourages you to use `nvm` (Node Version Manager) to manage
+> versions of Node.js. If you run `npx create-react-app` (see below) without
+> having first installed `create-react-app` globally, then `nvm` will cache the
+> version that you run. This cached version effectively gets treated as a global
+> installation, but, because it is hidden by `nvm`, it is a global installation
+> that is difficult to find and update. Accordingly, when new `create-react-app`
+> releases appear, the cached version can cause hard-to-resolve version
+> conflicts that will prevent `create-react-app` from running. A true global
+> version, in contrast, can be updated simply by re-running the `npm`
+> installation command.
+>
+> TL;DR: Installing `create-react-app` globally enables you to easily update and
+> maintain the `create-react-app` version that you are using with `nvm`.
+
+Once you have installed `create-react-app`, run the following command:
 
 ```sh
 npx create-react-app react-template
@@ -184,5 +212,6 @@ create with the template.
 - Bootstrap a React app with the `create-react-app` CLI tool
 - Remove extraneous files to make the template easier to use
 
+[cra]: https://create-react-app.dev/docs/getting-started/
 [robots.txt]: https://en.wikipedia.org/wiki/Robots_exclusion_standard
 [app academy's create react app template]: https://www.npmjs.com/package/@appacademy/cra-template-react-v17
