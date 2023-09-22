@@ -1,217 +1,70 @@
-# Practice: Create React App
+# Getting Started with Create React App
 
-In this practice, you will
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- Generate a React app using the `create-react-app` CLI tool
-- Modify it into a template that you can use more easily
+## Available Scripts
 
-## Generate a React app
+In the project directory, you can run:
 
-Open a terminal and change the directory until you are in the directory where
-you want to create your React app.
+### `npm start`
 
-To begin, install a global version of `create-react-app`:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-```bash
-npm i -g create-react-app
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-You only need to install `create-react-app` on your computer once, i.e., not
-before every project.
+### `npm test`
 
-> **Note**: Although the official `create-react-app` [documentation][cra] no
-> longer recommends installing a global version of `create-react-app`, App
-> Academy still recommends that you install it globally. This is because App
-> Academy also encourages you to use `nvm` (Node Version Manager) to manage
-> versions of Node.js. If you run `npx create-react-app` (see below) without
-> having first installed `create-react-app` globally, then `nvm` will cache the
-> version that you run. This cached version effectively gets treated as a global
-> installation, but, because it is hidden by `nvm`, it is a global installation
-> that is difficult to find and update. Accordingly, when new `create-react-app`
-> releases appear, the cached version can cause hard-to-resolve version
-> conflicts that will prevent `create-react-app` from running. A true global
-> version, in contrast, can be updated simply by re-running the `npm`
-> installation command.
->
-> TL;DR: Installing `create-react-app` globally enables you to easily update and
-> maintain the `create-react-app` version that you are using with `nvm`.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Once you have installed `create-react-app`, run the following command:
+### `npm run build`
 
-```sh
-npx create-react-app react-template
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The main part of the command is `npx create-react-app`, which takes a filename
-or path. The command will generate a React app based on that filename or path
-and install React's dependencies for you. Since you've passed the name
-`react-template` to the command, it will make a __react-template__ directory
-in your working directory and bootstrap the React app in there.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-In your terminal, `cd` into the __react-template__ directory. If you ran this
-command inside a pre-existing git repository, then there will not be a __.git__
-folder in this new directory. If you did not run the `npx` command in a git
-repository, then the new directory will have a __.git__ folder in place for you.
-Then, you can run `npm start` to run your React app in a development
-environment. Ignoring the __node_modules__ directory with all the installed
-dependencies, the current file structure in the __react-template__ folder looks
-like this:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```plaintext
-react-template
-├── .gitignore              A standard .gitignore file tailored for React apps
-├── README.md               A generic README for a generated project
-├── package-lock.json       The package lock file
-├── package.json            The package.json file
-├── public                  A directory to contain static images
-│   ├── favicon.ico         The fancy icon to show up in the tab
-│   ├── index.html          The skeleton HTML file React will put its DOM into
-│   ├── logo192.png         A small version of the React logo
-│   ├── logo512.png         A larger version of the React logo
-│   ├── manifest.json       A manifest file for mobile device screen shortcuts
-│   └── robots.txt          A robots.txt file
-└── src
-    ├── App.css             The App component's CSS
-    ├── App.js              The App component
-    ├── App.test.js         Test for the App component
-    ├── index.css           CSS for the entire site
-    ├── index.js            The entry file, code that renders the App component
-    ├── logo.svg            The fancy spinning React logo
-    ├── reportWebVitals.js  A performance measurement tool for the application
-    └── setupTests.js       A file to set up tests
-```
+### `npm run eject`
 
-## Modify the current React app
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Let's remove all the files that, for the most part, you will not use.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-In the __public__ directory, remove the following files:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-- __logo192.png__
-- __logo512.png__
-- __robots.txt__ (If you'd like to know more about what this file does, [here's
-  a link][robots.txt].)
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-In the __src__ directory, remove the following files:
+## Learn More
 
-- __App.css__
-- __App.test.js__
-- __logo.svg__
-- __reportWebVitals.js__
-- __setupTests.js__
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Because you deleted those files, the application will no longer build. If
-you haven't started your React app with `npm start` yet, now is a great time to
-start it so that you can see the error messages that will show up.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Next, open up __src/App.js__ and remove the following lines:
+### Code Splitting
 
-```js
-  import logo from './logo.svg';
-  import './App.css';
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Then delete everything between the parentheses of the `return` statement and
-replace it with some JSX that shows an `h1` element with the message "Hello from
-App". Your edits should result in a file that has this content.
+### Analyzing the Bundle Size
 
-```js
-  // ./src/App.js
-  function App() {
-    return <h1>Hello from App</h1>;
-  }
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-When you save that file, it will try to build your project again. This time it
-will complain about the missing __reportWebVitals__ file. Open __src/index.js__
-and remove the lines:
+### Making a Progressive Web App
 
-```js
-  import reportWebVitals from './reportWebVitals';
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-  // Some code ...
+### Advanced Configuration
 
-  reportWebVitals();
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-You can delete the big comment at the bottom of the file, too, because it will
-no longer be relevant. When you complete those edits, you should now see "Hello
-from App" in the browser. The __src/index.js__ file should look like this.
+### Deployment
 
-```js
-  // ./src/index.js
-  import React from 'react';
-  import ReactDOM from 'react-dom';
-  import './index.css';
-  import App from './App';
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-  ReactDOM.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
-```
+### `npm run build` fails to minify
 
-At this point, the application will build, but you will still see an error in
-your browser's DevTools console complaining about the missing __logo192.png__
-file. Open up __public/manifest.json__ and remove the `icons` property and its
-associated array. Also, change the short name to "React Template" and the name
-to "Create React App Template". Once you save this __manifest.json__ file, the
-error in your browser will go away. The updated manifest file should look like
-this.
-
-```json
-  {
-    "short_name": "React Template",
-    "name": "Create React App Template",
-    "start_url": ".",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
-  }
-```
-
-The title of the web page still reads "React App". To change that, open up the
-__public/index.html__ file and update the `title` element to read "React
-Template".
-
-The __src/index.css__ file is where all of the site-wide (not
-component-specific) CSS style rules should be defined. Remove all the default
-styling in the __src/index.css__ file and add this comment:
-
-```css
-  /* TODO Add site wide styles */
-```
-
-Finally, open your __package.json__ and remove the `"web-vitals"` line from the
-`dependencies` object. Run `npm install` again to update your
-__package-lock.json__.
-
-**Add and commit your files.** This is the baseline application. From here on
-out, you can modify files with impunity!
-
-To use this React template project, you can just copy this baseline application
-into a new project folder. (Don't forget to update your application names and
-titles in __public/manifest.json__, __public/index.html__, and
-__package.json__.) Alternatively, you can use [App Academy's Create React App
-template]--which basically produces the same baseline application that you just
-created--by running the following command:
-
-```sh
-npx create-react-app <project-folder-name> --template @appacademy/react-v17
-```
-
-Replace `<project-folder-name>` with the name of the project folder you want to
-create with the template.
-
-## What you have learned
-
-**Congratulations!** In this practice you have learned how to
-
-- Bootstrap a React app with the `create-react-app` CLI tool
-- Remove extraneous files to make the template easier to use
-
-[cra]: https://create-react-app.dev/docs/getting-started/
-[robots.txt]: https://en.wikipedia.org/wiki/Robots_exclusion_standard
-[app academy's create react app template]: https://www.npmjs.com/package/@appacademy/cra-template-react-v17
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
